@@ -1,6 +1,6 @@
 # POJ_TL 白話字(POJ) vs. 台羅(TL) 轉換家私 Python3 模組 #
 作者：潘科元  
-版本：0.0.6-20150820
+版本：0.0.6-20150820  
 授權：GNU General Public License, version 3.0 (GPL-3.0)
 
 ```
