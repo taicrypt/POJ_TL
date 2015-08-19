@@ -1,0 +1,98 @@
+#------ test --------------------------------------------------------------#
+def test():
+    lines = [
+        "雙叉, 鐵叉, 開叉; ㄚ頭; 女婢.",
+        "先置 ê 字, 親像 阿爸, 阿姑, 阿班, 按呢.",
+        "oá靠, 依oá; oá賴, 就是 ǹg望 人 辦事.",
+        "窟á水, 溝留水, 也是 古早 甘肅省 一條 溪 ê 名.",
+        "厝 無 正, 歪, khi-khi ê 款式.",
+        "塌窩 ê 地, 地面 無 平, kham-kham khia̍t-khia̍t.",
+        "雙叉 ê 樹枝, 雙叉 ê 枴á, hō͘ 跛腳 ê 人 會 行.",
+        "驢 teh 哮 ê 聲, 親像 悲哀 ê 款式.",
+        "阿片; 阿不倒, 就是 gín-á 𨑨迌 ê 物.",
+        "阿膠, 就是 用 龜á ê 骨 來 製造 ê 藥名.",
+        "先置 ê 字, 親像 \"á\" kap \"俺\", 相像 意思.",
+        "啞口, 就是 bōe 會 講話 ê 人.",
+        "兩 ê kiáⁿ婿 相 叫應 ê 字, 親chiâⁿ",
+        "hō͘ 人 昂愕 奇怪 ê 聲, 親像 â-ioh, 按呢.",
+        "押送, 押犯; 押槳, 就是 hō͘ 船 會 oa̍t ê 器具.",
+        "日 hō͘ 雲 遮, 無 明; 曖曖, 就是 月 hō͘ 雲 遮 ê 意思.",
+    ]
+
+    for line in lines:
+        print(POJtiau_2_POJsoo(line))
+
+    print('-' * 50)
+    for line in lines:
+        print(POJsoo_2_TLsoo(POJtiau_2_POJsoo(line)))
+
+    print('-' * 50)
+    for line in lines:
+        print(POJsoo_2_TLsoo(POJtiau_2_POJsoo(line), nasal='N'))
+
+    print('-' * 50)
+    for line in lines:
+        print(TLsoo_2_TLtiau(
+                 POJsoo_2_TLsoo(POJtiau_2_POJsoo(line), nasal='nn')
+               )
+             )
+
+    print('-' * 50)
+    tlsoo = ['Tse1 si7 Tai5-lo5 phinn7-im tshi3-giam7-kiok8',
+             'Hng7-hng7 tsit8-e5 lang5 tit8-tit8 lai5',
+             'Hiann-ti7 tsi2-mue7 long2 tsiau5 khuann3--tioh8',
+             'gim5-si honn2-kong1 ing5-kng',
+             'tiann7-tiann7 tiann5-tiann5 hann2-kui2',
+             'tshinn1-kiann1 tannh4-hiannh4',
+             'tshenn-kiann tannh-hiannh',
+             'tshinn1-kiann1 tannh8-hiannh8',
+             'hiah8-thau5', 'hiannh8-thau5',
+             'a2-m2, a3 M3, Mh, mh8, Mh8, nng2-tsiann2, nng3-tsng3, moo5, mo5'
+            ]
+    for line in tlsoo:
+        print(TLsoo_2_TLtiau(line))
+
+    poj_t = [
+        'tâi-oân-lâng','joa̍h--sí',
+        'Che sī siáⁿ?',
+        'Che sī Tâi-lô phīⁿ-im chhì-giām-kio̍k',
+        'Hn̄g-hn̄g chi̍t-ê lâng ti̍t-ti̍t lâi',
+        'Hiaⁿ-tī chí-mōe lóng chiâu khòaⁿ--tio̍h',
+        'gîm-si hó͘ⁿ-kong hóⁿ êng-kng',
+        'tiāⁿ-tiāⁿ tiâⁿ-tiâⁿ háⁿ-kúi',
+        'chhiⁿ-kiaⁿ tahⁿ-hiahⁿ',
+        'chheⁿ-kiaⁿ tahⁿ-hiahⁿ hia̍h-thâu hia̍hⁿ hia̍ⁿh',
+        'hia̍ⁿh=hiaⁿh, hia̍ⁿh-chi̍t-ē, chiū-sī chhiⁿ-kiaⁿ tah-hiaⁿh ê ì-sù',
+        'á-ḿ, à M̀, Mh, m̍h, M̍h, nńg-chiáⁿ, nǹg-chǹg, hò͘ⁿ, hòⁿ, mô͘, mô',
+        'hia̍hⁿ=hiahⁿ, hia̍hⁿ-chi̍t-ē, chiū-sī chhiⁿ-kiaⁿ tah-hiahⁿ ê ì-sù',
+    ]
+    for line in poj_t:
+        print(line)
+        print(POJtiau_2_POJsoo(line))
+        print(POJsoo_2_TLsoo(POJtiau_2_POJsoo(line)))
+        print(
+          TLsoo_2_TLtiau(POJsoo_2_TLsoo(POJtiau_2_POJsoo(line), nasal='nn')))
+        print(TLtiau_2_TLsoo(
+          TLsoo_2_TLtiau(POJsoo_2_TLsoo(POJtiau_2_POJsoo(line), nasal='nn'))))
+        # print(TLtiau_2_TLsoo(
+        #   TLsoo_2_TLtiau(POJsoo_2_TLsoo(POJtiau_2_POJsoo(line), nasal='nn')),
+        #   use14=True))
+        print(TLsoo_2_POJsoo(TLtiau_2_TLsoo(
+          TLsoo_2_TLtiau(POJsoo_2_TLsoo(POJtiau_2_POJsoo(line), nasal='nn')))))
+
+    poj_t2 = [
+        'óa oán óe oa̍h ùi ûi uih uih4 u̍ih iū iǔ iu̍h']
+
+    for line in poj_t2:
+        print(line)
+        pojtl = poj_tl(line)
+        print(pojtl.pojt_pojs())
+        print(pojtl.pojt_pojs().pojs_tls())
+        print(pojtl.pojt_pojs().pojs_tls().tls_tlt())
+        print(pojtl.pojt_pojs().pojs_tls().tls_tlt().tlt_tls())
+        print(pojtl.pojt_pojs().pojs_tls().tls_tlt().tlt_tls().tls_pojs())
+        print(pojtl.pojt_pojs().pojs_tls().tls_tlt().
+                tlt_tls().tls_pojs().pojs_pojt())
+
+        print(pojtl.pojt_tlt())
+        print(pojtl.pojt_tlt().tlt_pojt())
