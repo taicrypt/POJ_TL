@@ -16,8 +16,10 @@ POJ調號式--------------->POJ數字式------------->TL數字式------------->T
 Finished：前六个(pojt_pojs(), pojs_tls(), tls_tlt(), pojs_pojt(), tls_pojs(), tlt_tls())  
 TODO: 直接實作 pojt_tlt(), tlt_pojt()。目前先透過前六个來進行間接轉換。
 
-## 用法舉例 ##
+## Python3 程式呼法[khoo-huat]舉例 ##
 ```
+#!/usr/bin/env python3
+
 from POJ_TL import poj_tl
 
 pojt = 'oaiⁿ oáiⁿ oàiⁿ oaihⁿ oâiⁿ oǎiⁿ oāiⁿ oa̍ihⁿ oăiⁿ'
